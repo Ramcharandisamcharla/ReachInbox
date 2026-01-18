@@ -1,0 +1,22 @@
+{
+  "name": "reachinbox-assignment",
+  "version": "1.0.0",
+  "description": "ReachInbox assignment project",
+  "scripts": {
+    "start": "concurrently \"npm run dev --workspace=backend\" \"npm start --workspace=frontend\"",
+    "dev": "concurrently \"npm run dev --workspace=backend\" \"npm start --workspace=frontend\"",
+    "prisma:migrate": "prisma migrate dev",
+    "prisma:generate": "prisma generate"
+  },
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "prisma": "^5.7.1"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.22.0"
+  }
+}
